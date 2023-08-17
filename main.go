@@ -34,15 +34,12 @@ func main() {
 
 	log.Println("Listening on 0.0.0.0:" + port)
 
-	for {
-		conn, err := listener.Accept()
-		if err != nil {
-			log.Println("Error accepting connection: ", err)
-			os.Exit(1)
-		}
-
-		handleConnection(conn)
+	conn, err := listener.Accept()
+	if err != nil {
+		log.Println("Error accepting connection: ", err)
+		os.Exit(1)
 	}
+	handleConnection(conn)
 }
 
 func handleConnection(conn net.Conn) {
