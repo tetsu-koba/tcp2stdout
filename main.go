@@ -11,7 +11,7 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		log.Println("Usage: %s <port>", os.Args[0])
+		log.Printf("Usage: %s <port>\n", os.Args[0])
 		os.Exit(1)
 	}
 	port := os.Args[1]
